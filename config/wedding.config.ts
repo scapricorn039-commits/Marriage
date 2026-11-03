@@ -46,20 +46,20 @@ export const wedding = {
   /** "preview" shows sample markings. "live" removes them and hides unconfirmed functions. */
   mode: "preview" as "preview" | "live",
 
-  siteUrl: "https://your-wedding-site.example",
+  siteUrl: "https://marriage-vikas.vercel.app",
   project: {
     name: "The Royal Aangan",
     tagline: "Two Hearts. Two Families. One Beautiful Beginning.",
   },
 
   couple: {
-    bride: { name: "Bride's Name", initial: "B" },
-    groom: { name: "Groom's Name", initial: "G" },
+    bride: { name: "Vikas", initial: "V" },
+    groom: { name: "Sakshi", initial: "S" },
   },
 
   /** The moment the countdown runs to. Sample date in January: replace it with your own. */
-  weddingDateTime: "2027-01-15T19:00:00+05:30",
-  city: "Kota, Rajasthan",
+  weddingDateTime: "2027-02-11T00:00:00+05:30",
+  city: "Ujjain, Rajasthan",
 
   invitation: {
     greetingHindi: "पधारो म्हारे आँगन",
@@ -69,8 +69,8 @@ export const wedding = {
     invocation: "॥ श्री गणेशाय नमः ॥",
     message:
       "With the blessings of our families, we invite you to join us as we celebrate the beginning of a beautiful journey.",
-    brideFamily: "[Bride's parents' names]",
-    groomFamily: "[Groom's parents' names]",
+    brideFamily: "Mr. Aparabal",
+    groomFamily: "Mamta Singh",
     familyWording: "request the pleasure of your company",
   },
 
@@ -78,7 +78,7 @@ export const wedding = {
   events: [
     {
       id: "haldi", name: "Haldi", illustration: "haldi", confirmed: false,
-      start: "2027-01-14T10:00:00+05:30", end: "2027-01-14T13:00:00+05:30",
+      start: "2027-02-09T02:30:00+05:30", end: "2027-01-14T13:00:00+05:30",
       venue: "[Haldi venue]", address: "[Full address], Kota, Rajasthan", mapsQuery: "Kota, Rajasthan",
       description: "Turmeric, laughter and a morning of family mischief.",
       dressCode: "[Dress code, for example shades of yellow]",
