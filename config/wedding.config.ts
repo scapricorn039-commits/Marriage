@@ -145,7 +145,7 @@ export const wedding = {
   ] as { question: string; answer: "bride" | "groom"; reveal: string }[],
 
   secretMessage:
-  "You found three hearts, but you've had ours all along.\n\nNow come and eat!\n\nSakshi & Vikas",
+  "You found three hearts, but you've had ours all along.\nNow come and eat!\nSakshi & Vikas",
 
   /**
    * BACKGROUND SOUND. To attach any sound file:
