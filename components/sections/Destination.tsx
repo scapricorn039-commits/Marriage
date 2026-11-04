@@ -14,12 +14,13 @@ export function Destination() {
   return (
     <section id="destination" className="room">
       <div className="room-inner">
-        <MaskHeading lines={["Our celebration", "awaits you in Kota."]} />
+        <MaskHeading lines={["Our celebration", "awaits you in Ujjain."]} />
         <Journey />
         <div className="dest">
           <div className="dest-venue">
+            <h3 className="t-chapter"><S>{d.venueHeading}</S></h3>
             <div className="dest-photo"><ArchPhoto photo={d.photo} shape="multifoil" ratio="4 / 5" sizes="(min-width: 900px) 300px, 60vw" /></div>
-            <h3 className="t-chapter"><S>{d.venueName}</S></h3>
+            <h4 className="t-chapter"><S>{d.venueName}</S></h3>
             <p><S>{d.address}</S></p>
             <div className="actions">
               <a className="btn" href={directionsUrl(d.mapsQuery)} target="_blank" rel="noreferrer" data-directions>Get directions</a>
@@ -27,7 +28,6 @@ export function Destination() {
             </div>
           </div>
           <div className="ledger">
-            <div><h3>Where to stay</h3>{d.stays.map((s) => <p key={s.name}><S>{s.name}</S>: <S>{s.note}</S></p>)}</div>
             <div><h3>Wedding assistance</h3><p><S>{a.name}</S>, <S>{a.phone}</S></p>
               <p className="ledger-links"><a className="link" href={telHref(a.phone)}>Call</a><a className="link" href={whatsappHref(a.phone)} target="_blank" rel="noreferrer">Message on WhatsApp</a></p></div>
           </div>
