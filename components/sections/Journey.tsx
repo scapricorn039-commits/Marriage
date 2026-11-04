@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { S } from "@/components/ui/bits";
 import { wedding } from "@/config/wedding.config";
 import { gsap } from "@/lib/gsap";
 import { artUrl } from "@/lib/art-url";
@@ -34,8 +35,10 @@ function Vehicle({ name, x, ground, w, h, wheels, scale = 1, flip, cls = "", chi
   );
 }
 
-type Mode = "train" | "air" | "road";
-const tabs: { id: Mode; label: string }[] = [{ id: "train", label: "By train" }, { id: "air", label: "By air" }, { id: "road", label: "By road" }];
+type Mode = "departure" | "arrival";
+const tabs: { id: Mode; label: string }[] = [{ id: "departure", label: "Departure" }, { id: "arrival", label: "Arrival" }];
+/* Which vehicles stay bright for each button. */
+const focusFor: Record<Mode, "road" | "train"> = { departure: "road", arrival: "train" };
 
 /**
  * The road to Kota. Everything moves on its own layer and only ever changes transforms,
@@ -43,7 +46,7 @@ const tabs: { id: Mode; label: string }[] = [{ id: "train", label: "By train" },
  */
 export function Journey() {
   const root = useRef<HTMLDivElement>(null);
-  const [mode, setMode] = useState<Mode>("train");
+  const [mode, setMode] = useState<Mode>("departure");
   const tw = useRef<Partial<Record<"train" | "plane" | "convoy" | "traffic" | "camel" | "boat" | "clouds", gsap.core.Tween>>>({});
   const [dim, setDim] = useState(false);
   const dimT = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -88,15 +91,14 @@ export function Journey() {
   const choose = (m: Mode) => {
     setMode(m); setDim(true); clearTimeout(dimT.current); dimT.current = setTimeout(() => setDim(false), 5200);
     if (prefersReducedMotion()) return;
-    if (m === "train") tw.current.train?.seek(1.2);
-    if (m === "air") tw.current.plane?.seek(2.5);
-    if (m === "road") tw.current.convoy?.seek(1);
+    if (m === "arrival") tw.current.train?.seek(1.2);
+    if (m === "departure") tw.current.convoy?.seek(1);
   };
-  const text = mode === "train" ? wedding.destination.rail : mode === "air" ? wedding.destination.air : wedding.destination.road;
+  const text = wedding.destination[mode];
 
   return (
     <div className="journey">
-      <div className="journey-stage" ref={root} data-focus={dim ? mode : "none"} data-live="true" data-perch="tr" role="img" aria-label="A painted view of Kota with Kota Garh and the Chambal river. A train crosses a viaduct, a plane passes overhead, and a garlanded wedding car, a family van, an auto-rickshaw, a scooter and a camel cart travel along the road.">
+      <div className="journey-stage" ref={root} data-focus={dim ? focusFor[mode] : "none"} data-live="true" data-perch="tr" role="img" aria-label="A painted view of Ujjain with a fort and a river. A train crosses a viaduct, a plane passes overhead, and a garlanded wedding car, a family van, an auto-rickshaw, a scooter and a camel cart travel along the road.">
         <div className="world">
           <img className="j-layer j-back" src={artUrl("journey-back")} alt="" loading="lazy" decoding="async" />
           <div className="lane lane-clouds">
@@ -132,7 +134,7 @@ export function Journey() {
           </div>
           <img className="j-layer j-front" src={artUrl("journey-front")} alt="" loading="lazy" decoding="async" />
           <svg className="j-labels j-front" viewBox={`0 0 ${W} ${H}`} aria-hidden="true">
-            <text x={610} y={696} textAnchor="middle" fontFamily="'DM Sans Variable','DM Sans',sans-serif" fontSize={13} fontWeight={700} fill={P.brown}>KOTA</text>
+            <text x={610} y={696} textAnchor="middle" fontFamily="'DM Sans Variable','DM Sans',sans-serif" fontSize={13} fontWeight={700} fill={P.brown}>UJJAIN</text>
             <text x={610} y={728} textAnchor="middle" fontFamily="'DM Sans Variable','DM Sans',sans-serif" fontSize={22} fontWeight={600} fill={P.brown}>0</text>
             <text x={610} y={748} textAnchor="middle" fontFamily="'DM Sans Variable','DM Sans',sans-serif" fontSize={11} fill={P.brown}>km</text>
           </svg>
@@ -140,10 +142,10 @@ export function Journey() {
         </div>
       </div>
       <div className="journey-bar">
-        <div className="journey-tabs" role="tablist" aria-label="How to reach Kota">
+        <div className="journey-tabs" role="tablist" aria-label="Departure and arrival">
           {tabs.map((t) => <button key={t.id} type="button" role="tab" aria-selected={mode === t.id} className="journey-tab" onClick={() => choose(t.id)} data-way={t.id}>{t.label}</button>)}
         </div>
-        <p className="journey-text" aria-live="polite" data-way-text>{text}</p>
+        <p className="journey-text" aria-live="polite" data-way-text><S>{text}</S></p>
       </div>
     </div>
   );
