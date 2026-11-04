@@ -9,7 +9,7 @@ import { scrollToRoom } from "@/lib/use-motion-ok";
 
 const hints: Record<(typeof HEART_IDS)[number], { room: string; text: string; go: string }> = {
   arch: { room: "entrance", text: "One sits on the first page, near the lamps.", go: "Go to the first page" },
-  lake: { room: "destination", text: "One floats on the Chambal in Kota.", go: "Go to the river" },
+  lake: { room: "destination", text: "One floats on the river in Ujjain.", go: "Go to the river" },
   book: { room: "blessings", text: "One is tucked beside the guest book.", go: "Go to the book" },
 };
 
