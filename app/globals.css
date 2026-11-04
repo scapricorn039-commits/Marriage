@@ -343,6 +343,7 @@ textarea.input { line-height: 1.6; resize: vertical; }
 .dest-venue { display: grid; gap: .6rem; justify-items: start; min-width: 0; }
 .dest-venue p { overflow-wrap: anywhere; }
 .dest-venue .actions { margin-top: .7rem; }
+.dest-venue-name { font-family: var(--font-serif); font-weight: 400; font-size: 1.5rem; line-height: 1.15; overflow-wrap: anywhere; }
 .dest-photo { width: min(62%, 240px); margin-bottom: .6rem; }
 .ledger { display: grid; min-width: 0; }
 .ledger > div { display: grid; gap: .25rem; padding-block: 1rem; border-top: 1px solid var(--line); min-width: 0; transition: padding-left .35s var(--ease); }
