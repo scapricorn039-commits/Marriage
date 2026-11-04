@@ -20,7 +20,7 @@ export function Destination() {
           <div className="dest-venue">
             <h3 className="t-chapter"><S>{d.venueHeading}</S></h3>
             <div className="dest-photo"><ArchPhoto photo={d.photo} shape="multifoil" ratio="4 / 5" sizes="(min-width: 900px) 300px, 60vw" /></div>
-            <h4 className="t-chapter"><S>{d.venueName}</S></h3>
+            <h4 className="dest-venue-name"><S>{d.venueName}</S></h4>
             <p><S>{d.address}</S></p>
             <div className="actions">
               <a className="btn" href={directionsUrl(d.mapsQuery)} target="_blank" rel="noreferrer" data-directions>Get directions</a>
