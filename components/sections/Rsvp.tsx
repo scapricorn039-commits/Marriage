@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState, type FormEvent } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { visibleEvents, wedding } from "@/config/wedding.config";
+import { visibleEvents } from "@/config/wedding.config";
 import { submitRsvp } from "@/lib/api-client";
 import { useGuest } from "@/lib/guest-context";
 import { MaskHeading } from "@/components/motion/MaskHeading";
@@ -13,7 +13,7 @@ export function Rsvp() {
   const { guest, token } = useGuest();
   const events = visibleEvents();
   const max = guest?.maxAttendees ?? 20;
-  const [v, set] = useState({ guestName: "", attending: null as boolean | null, attendees: 1, functions: [] as string[], dietary: "", dietaryNote: "", message: "", website: "" });
+  const [v, set] = useState({ guestName: "", attending: null as boolean | null, attendees: 1, functions: [] as string[], message: "", website: "" });
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [done, setDone] = useState<null | { attending: boolean; name: string }>(null);
@@ -22,10 +22,9 @@ export function Rsvp() {
   useEffect(() => {
     if (!guest) return;
     const r = guest.rsvp;
-    const known = wedding.dietaryOptions.includes(r?.dietary ?? "");
     set((s) => ({
       ...s, guestName: guest.displayName, attending: r ? r.attending : null, attendees: r?.attendees || 1, functions: r?.functions ?? [],
-      dietary: known ? r!.dietary! : r?.dietary ? "Other" : "", dietaryNote: known ? "" : r?.dietary ?? "", message: r?.message ?? "",
+      message: r?.message ?? "",
     }));
   }, [guest]);
 
@@ -36,8 +35,7 @@ export function Rsvp() {
     if (!v.guestName.trim()) { setErr("Please add your name or family name."); return; }
     if (v.attending === null) { setErr("Please tell us whether you can attend."); return; }
     setBusy(true); setErr("");
-    const dietary = v.dietary === "Other" ? v.dietaryNote : v.dietary;
-    const r = await submitRsvp({ guestName: v.guestName, attending: v.attending, attendees: v.attending ? v.attendees : 0, functions: v.functions, dietary, message: v.message, token: token ?? undefined, website: v.website });
+    const r = await submitRsvp({ guestName: v.guestName, attending: v.attending, attendees: v.attending ? v.attendees : 0, functions: v.functions, dietary: "", message: v.message, token: token ?? undefined, website: v.website });
     setBusy(false);
     if (!r.ok) { setErr(r.error); return; }
     setDone({ attending: v.attending, name: v.guestName.trim() });
@@ -89,15 +87,6 @@ export function Rsvp() {
                       </div>
                     </fieldset>
                   )}
-                  <div className="field">
-                    <label htmlFor="r-diet">Dietary preference (optional)</label>
-                    <select id="r-diet" className="input" value={v.dietary} onChange={(e) => set({ ...v, dietary: e.target.value })}>
-                      <option value="">No preference</option>
-                      {wedding.dietaryOptions.map((o) => <option key={o}>{o}</option>)}
-                      <option value="Other">Other</option>
-                    </select>
-                    {v.dietary === "Other" && <input aria-label="Tell us your dietary preference" className="input" maxLength={300} value={v.dietaryNote} onChange={(e) => set({ ...v, dietaryNote: e.target.value })} placeholder="Tell us what to prepare" />}
-                  </div>
                 </motion.div>
               )}
               <div className="field"><label htmlFor="r-msg">Message (optional)</label><textarea id="r-msg" className="input" rows={2} maxLength={1000} value={v.message} onChange={(e) => set({ ...v, message: e.target.value })} /></div>
