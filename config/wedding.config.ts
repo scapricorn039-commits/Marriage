@@ -44,7 +44,7 @@ export type WeddingEvent = {
 
 export const wedding = {
   /** "preview" shows sample markings. "live" removes them and hides unconfirmed functions. */
-  mode: "preview" as "preview" | "live",
+  mode: "live",
 
   siteUrl: "https://marriage-sakshi.vercel.app",
   project: {
@@ -91,21 +91,21 @@ export const wedding = {
       dressCode: "Pastel Dreams",
     },
     {
-      id: "sangeet", name: "Sangeet", illustration: "sangeet", confirmed: false,
+      id: "sangeet", name: "Sangeet", illustration: "sangeet", confirmed: true,
       start: "2027-02-10T19:00:00+05:30", end: "2027-02-10T22:00:00+05:30",
       venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
       description: "Our family takes the floor. Practise your steps.",
       dressCode: "Glamour & Glitter",
     },
     {
-      id: "wedding", name: "Wedding Ceremony", illustration: "wedding", confirmed: false,
+      id: "wedding", name: "Wedding Ceremony", illustration: "wedding", confirmed: true,
       start: "2027-02-11T14:00:00+05:30", end: "2027-02-12T04:00:00+05:30",
       venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
       description: "The sacred fire, the seven steps and the promise at the heart of it all.",
       dressCode: "Draped in Tradition",
     },
     {
-      id: "reception", name: "Reception", illustration: "reception", confirmed: false,
+      id: "reception", name: "Reception", illustration: "reception", confirmed: true,
       start: "2027-02-23T19:00:00+05:30", end: "2027-02-24T00:00:00+05:30",
       venue: "Gayatri Palace", address: "Durg-Dhamdha Rd, Durg, Chhattisgarh", mapsQuery: "Gayatri Palace, Durg",
       description: "Dinner, toasts and a first evening together as a married couple.",
