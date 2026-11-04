@@ -336,7 +336,7 @@ textarea.input { line-height: 1.6; resize: vertical; }
 .journey-tab[aria-selected="true"]::after { transform: scaleX(1); }
 .journey-text { max-width: 62ch; min-height: 4.8em; overflow-wrap: anywhere; }
 @media (min-width: 600px) { .journey-stage { aspect-ratio: 16 / 9; } .journey-text { min-height: 3.2em; } }
-@media (min-width: 1024px) { .journey-stage { aspect-ratio: 1760 / 792; max-height: 72svh; width: 100%; } .journey-bar { grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: 2.5rem; } }
+@media (min-width: 1024px) { .journey-stage { aspect-ratio: 1760 / 792; max-height: 72svh; width: 100%; } .journey-bar { grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: 2.5rem; } .journey-text { padding-top: .6rem; } }
 
 /* Destination */
 .dest { display: grid; gap: 2.5rem; margin-top: clamp(2.5rem, 6vw, 4rem); }
@@ -355,8 +355,8 @@ textarea.input { line-height: 1.6; resize: vertical; }
 .ledger-links { display: flex; gap: 1rem; flex-wrap: wrap; }
 @media (min-width: 768px) {
   .dest { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
-  /* Lines the first line of the assistance block up with the Reception heading. */
-  .dest .ledger { padding-top: .9rem; }
+  /* Starts the assistance block level with the top of the arch: heading height, plus the space below it, minus the arch's overhang. */
+  .dest .ledger { padding-top: calc(clamp(2rem, 4.4vw, 3rem) * 1.05 + 2.5rem); }
 }
 
 /* Moments: a tight grid with clean edges */
