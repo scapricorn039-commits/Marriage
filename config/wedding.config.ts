@@ -58,7 +58,7 @@ export const wedding = {
   },
 
   /** The moment the countdown runs to. Sample date in January: replace it with your own. */
-  weddingDateTime: "2027-02-11T00:00:00+05:30",
+  weddingDateTime: "2027-02-11T14:00:00+05:30",
   city: "Ujjain, Madhya Pradesh",
 
   invitation: {
@@ -78,35 +78,35 @@ export const wedding = {
   events: [
     {
       id: "mehendi", name: "Mehendi", illustration: "mehendi", confirmed: true,
-      start: "2027-02-07T07:00:00+05:30", end: "2027-02-07T12:30:00+05:30",
+      start: "2027-02-07T12:30:00+05:30", end: "2027-02-07T18:00:00+05:30",
       venue: "Tripti Kunj", address: "Plot No.70, Street No. 13, Vivekanand Nagar, Kohka, Bhilai, Chattisgarh", mapsQuery: "Hotel Royal Blue, Kohka",
       description: "An unhurried afternoon of henna, folk songs and sweet chai.",
       dressCode: "Your Shade, Your Style",
     },
     {
       id: "haldi", name: "Haldi", illustration: "haldi", confirmed: true,
-      start: "2027-02-10T04:30:00+05:30", end: "2027-02-10T06:30:00+05:30",
+      start: "2027-02-10T10:00:00+05:30", end: "2027-02-10T12:00:00+05:30",
       venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
       description: "Turmeric, laughter and a morning of family mischief.",
       dressCode: "Pastel Dreams",
     },
     {
       id: "sangeet", name: "Sangeet", illustration: "sangeet", confirmed: false,
-      start: "2027-02-10T13:30:00+05:30", end: "2027-02-10T15:30:00+05:30",
+      start: "2027-02-10T19:00:00+05:30", end: "2027-02-10T22:00:00+05:30",
       venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
       description: "My family takes the floor. Practise your steps.",
       dressCode: "Glamour & Glitter",
     },
     {
       id: "wedding", name: "Wedding Ceremony", illustration: "wedding", confirmed: false,
-      start: "2027-02-11T08:30:00+05:30", end: "2027-02-11T22:30:00+05:30",
+      start: "2027-02-11T14:00:00+05:30", end: "2027-02-12T04:00:00+05:30",
       venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
       description: "The sacred fire, the seven steps and the promise at the heart of it all.",
       dressCode: "Draped in Tradition",
     },
     {
       id: "reception", name: "Reception", illustration: "reception", confirmed: false,
-      start: "2027-02-23T13:30:00+05:30", end: "2027-02-23T18:30:00+05:30",
+      start: "2027-02-23T07:00:00+05:30", end: "2027-02-24T00:00:00+05:30",
       venue: "Gayatri Palace", address: "Durg-Dhamdha Rd, Durg, Chattisgarh", mapsQuery: "Gayatri Palace, Durg",
       description: "Dinner, toasts and a first evening together as a married couple.",
       dressCode: "Glamour After Dark",
@@ -120,18 +120,15 @@ export const wedding = {
   },
 
   destination: {
+    /** The heading above the venue details. */
+    venueHeading: "Reception in Bhilai",
     venueName: "Gayatri Palace",
     address: "Durg-Dhamdha Rd, Durg, Chattisgarh",
     mapsQuery: "Gayatri Palace, Durg",
     photo: { src: null, vignette: "courtyard", caption: "Painting: a courtyard in bougainvillea. Replace with a photograph of your venue." } as Photo,
-    stays: [
-      { name: "[Hotel one]", note: "[Distance from venue, and any group rate]" },
-      { name: "[Hotel two]", note: "[Distance from venue, and any group rate]" },
-    ],
-    /** General Kota travel facts checked in November 2026. Review close to the wedding. */
-    rail: "Kota Junction (station code KOTA) sits on the main Delhi to Mumbai line, so many direct trains stop here.",
-    road: "By road, Kota is about four to five hours from Jaipur. Please check the route before you set out.",
-    air: "Kota has no commercial flights yet. Its new airport is expected to open around late 2027. For January, fly to Jaipur (JAI), about 250 km by road, then take a car or train.",
+    /** The two travel buttons in the picture show these lines. */
+    departure: "[Departure: date, time and where guests leave from]",
+    arrival: "[Arrival: date, time and where guests arrive in Ujjain]",
   },
 
   assistance: {
