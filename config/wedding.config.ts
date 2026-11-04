@@ -127,8 +127,8 @@ export const wedding = {
     mapsQuery: "Gayatri Palace, Durg",
     photo: { src: null, vignette: "courtyard", caption: "Painting: a courtyard in bougainvillea. Replace with a photograph of your venue." } as Photo,
     /** The two travel buttons in the picture show these lines. */
-    departure: "[Departure: date, time and where guests leave from]",
-    arrival: "[Arrival: date, time and where guests arrive in Ujjain]",
+    departure: "Our bus leaves from the home at 7:00 AM on 9th February. Join us for the celebrations!",
+    arrival: "The return bus leaves the venue at 8:00 AM on 12th February.",
   },
 
   assistance: {
@@ -137,15 +137,15 @@ export const wedding = {
   },
 
   quiz: [
-    { question: "Who said I love you first?", answer: "bride", reveal: "[Add the story behind this answer.]" },
-    { question: "Who takes longer to get ready?", answer: "groom", reveal: "[Add the story behind this answer.]" },
-    { question: "Who is the bigger foodie?", answer: "groom", reveal: "[Add the story behind this answer.]" },
-    { question: "Who is more romantic?", answer: "bride", reveal: "[Add the story behind this answer.]" },
-    { question: "Who is more likely to forget something?", answer: "bride", reveal: "[Add the story behind this answer.]" },
+    { question: "Who is more likely to convince everyone for a family trip?", answer: "bride", reveal: "Because she can turn a casual family chat into a fully booked holiday before anyone even realises!" },
+    { question: "Who takes longer to get ready?", answer: "bride", reveal: "None! It was a trick question… Shhhh, just go with the answer!" },
+    { question: "Who is the bigger foodie?", answer: "groom", reveal: "Because he wants to try every dish, taste every flavour, and leave no food unexplored!" },
+    { question: "Who is more likely to spend unnecessarily on shopping.", answer: "bride", reveal: "Because every step brings a new find, and she just can't resist taking it home!" },
+    { question: "Who is more likely to forget something?", answer: "bride", reveal: "Because she remembers everything… except the one thing she actually needs!" },
   ] as { question: string; answer: "bride" | "groom"; reveal: string }[],
 
   secretMessage:
-    "[Your secret message to guests who find all three hearts, for example a thank-you, or a table where you left a surprise.]",
+  "You found three hearts, but you've had ours all along.\n\nNow come and eat!\n\nSakshi & Vikas",
 
   /**
    * BACKGROUND SOUND. To attach any sound file:
@@ -170,8 +170,6 @@ export const wedding = {
     /** true keeps it silent until a guest presses the sound button. */
     startMuted: false,
   },
-
-  dietaryOptions: ["Vegetarian", "Jain", "Vegan", "No onion or garlic", "Non-vegetarian"],
 };
 
 /** friends: the full invitation. family: everything except Our Story and Moments. */
