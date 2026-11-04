@@ -27,12 +27,12 @@ export const friendsOnly = {
   ],
 
   gallery: [
-    { src: null, vignette: "peacock", caption: "Engagement photographs go here" },
-    { src: null, vignette: "lanterns", caption: "A couple portrait goes here" },
-    { src: null, vignette: "lotus", caption: "A candid moment goes here" },
-    { src: null, vignette: "feather", caption: "A favourite memory goes here" },
-    { src: null, vignette: "chambal", caption: "A trip you took together goes here" },
-    { src: null, vignette: "marigold", caption: "A family moment goes here" },
-    { src: null, vignette: "moon", caption: "A quiet evening goes here" },
+    { src: "/photo/date.jpeg", vignette: "peacock", caption: "Our first date" },
+    { src: "/photo/trip.jpeg", vignette: "lanterns", caption: "Our first trip" },
+    { src: "/photo/ooty.jpeg", vignette: "lotus", caption: "Our first Bangalore trip" },
+    { src: "/photo/diwali.jpeg", vignette: "feather", caption: "First festival together" },
+    { src: "/photo/wedding.jpeg", vignette: "chambal", caption: "Attending our group's first wedding" },
+    { src: "/photo/roka.jpeg", vignette: "marigold", caption: "The Start of our forever" },
+    { src: "/photo/flight.jpeg", vignette: "moon", caption: "First flight together" },
   ] as Photo[],
 };
