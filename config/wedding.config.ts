@@ -79,7 +79,7 @@ export const wedding = {
     {
       id: "mehendi", name: "Mehendi", illustration: "mehendi", confirmed: true,
       start: "2027-02-07T12:30:00+05:30", end: "2027-02-07T18:00:00+05:30",
-      venue: "Tripti Kunj", address: "Plot No.70, Street No. 13, Vivekanand Nagar, Kohka, Bhilai, Chattisgarh", mapsQuery: "Hotel Royal Blue, Kohka",
+      venue: "Tripti Kunj", address: "Plot No.70, Street No. 13, Vivekanand Nagar, Kohka, Bhilai, Chhattisgarh", mapsQuery: "689J+FV3 Bhilai, Chhattisgarh",
       description: "An unhurried afternoon of henna, folk songs and sweet chai.",
       dressCode: "Your Shade, Your Style",
     },
@@ -106,8 +106,8 @@ export const wedding = {
     },
     {
       id: "reception", name: "Reception", illustration: "reception", confirmed: false,
-      start: "2027-02-23T07:00:00+05:30", end: "2027-02-24T00:00:00+05:30",
-      venue: "Gayatri Palace", address: "Durg-Dhamdha Rd, Durg, Chattisgarh", mapsQuery: "Gayatri Palace, Durg",
+      start: "2027-02-23T19:00:00+05:30", end: "2027-02-24T00:00:00+05:30",
+      venue: "Gayatri Palace", address: "Durg-Dhamdha Rd, Durg, Chhattisgarh", mapsQuery: "Gayatri Palace, Durg",
       description: "Dinner, toasts and a first evening together as a married couple.",
       dressCode: "Glamour After Dark",
     },
@@ -123,7 +123,7 @@ export const wedding = {
     /** The heading above the venue details. */
     venueHeading: "Reception in Bhilai",
     venueName: "Gayatri Palace",
-    address: "Durg-Dhamdha Rd, Durg, Chattisgarh",
+    address: "Durg-Dhamdha Rd, Durg, Chhattisgarh",
     mapsQuery: "Gayatri Palace, Durg",
     photo: { src: null, vignette: "courtyard", caption: "Painting: a courtyard in bougainvillea. Replace with a photograph of your venue." } as Photo,
     /** The two travel buttons in the picture show these lines. */
