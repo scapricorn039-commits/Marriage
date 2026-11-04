@@ -16,7 +16,11 @@ const shareUrl = () => `${window.location.origin}${window.location.pathname}`;
 export function Farewell() {
   const toast = useToast();
   const [canShare, setCanShare] = useState(false);
-  useEffect(() => setCanShare(typeof navigator.share === "function"), []);
+  const [waText, setWaText] = useState(SHARE_TEXT());
+  useEffect(() => {
+    setCanShare(typeof navigator.share === "function");
+    setWaText(`${SHARE_TEXT()}\n\n${shareUrl()}`);
+  }, []);
   const share = async () => {
     const url = shareUrl();
     try { if (navigator.share) { await navigator.share({ title: wedding.project.name, text: SHARE_TEXT(), url }); return; } }
@@ -44,7 +48,7 @@ export function Farewell() {
         <div className="actions">
           <CalendarButton item={saveTheDateItem()} label="Save the date" variant="btn btn-gold" />
           <button type="button" className="btn btn-line" onClick={share} data-share>{canShare ? "Share invitation" : "Copy invitation link"}</button>
-          <a className="btn btn-line" href={`https://wa.me/?text=${encodeURIComponent(SHARE_TEXT())}`} target="_blank" rel="noreferrer" data-wa>Send on WhatsApp</a>
+          <a className="btn btn-line" href={`https://wa.me/?text=${encodeURIComponent(waText)}`} target="_blank" rel="noreferrer" data-wa>Send on WhatsApp</a>
         </div>
         <p className="fare-help">Need help on the way? <S>{wedding.assistance.name}</S>, <a href={telHref(wedding.assistance.phone)}><S>{wedding.assistance.phone}</S></a> or <a href={whatsappHref(wedding.assistance.phone)} target="_blank" rel="noreferrer">WhatsApp</a></p>
         <button type="button" onClick={top} className="fare-top" data-top>Back to the top</button>
