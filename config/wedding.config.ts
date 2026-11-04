@@ -94,7 +94,7 @@ export const wedding = {
       id: "sangeet", name: "Sangeet", illustration: "sangeet", confirmed: false,
       start: "2027-02-10T19:00:00+05:30", end: "2027-02-10T22:00:00+05:30",
       venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
-      description: "My family takes the floor. Practise your steps.",
+      description: "Our family takes the floor. Practise your steps.",
       dressCode: "Glamour & Glitter",
     },
     {
@@ -140,7 +140,7 @@ export const wedding = {
     { question: "Who is more likely to convince everyone for a family trip?", answer: "bride", reveal: "Because she can turn a casual family chat into a fully booked holiday before anyone even realises!" },
     { question: "Who takes longer to get ready?", answer: "bride", reveal: "None! It was a trick question… Shhhh, just go with the answer!" },
     { question: "Who is the bigger foodie?", answer: "groom", reveal: "Because he wants to try every dish, taste every flavour, and leave no food unexplored!" },
-    { question: "Who is more likely to spend unnecessarily on shopping.", answer: "bride", reveal: "Because every step brings a new find, and she just can't resist taking it home!" },
+    { question: "Who is more likely to spend unnecessarily on shopping?", answer: "bride", reveal: "Because every step brings a new find, and she just can't resist taking it home!" },
     { question: "Who is more likely to forget something?", answer: "bride", reveal: "Because she remembers everything… except the one thing she actually needs!" },
   ] as { question: string; answer: "bride" | "groom"; reveal: string }[],
 
