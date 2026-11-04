@@ -46,20 +46,20 @@ export const wedding = {
   /** "preview" shows sample markings. "live" removes them and hides unconfirmed functions. */
   mode: "preview" as "preview" | "live",
 
-  siteUrl: "https://marriage-vikas.vercel.app",
+  siteUrl: "https://marriage-sakshi.vercel.app",
   project: {
     name: "The Royal Aangan",
     tagline: "Two Hearts. Two Families. One Beautiful Beginning.",
   },
 
   couple: {
-    bride: { name: "Vikas", initial: "V" },
-    groom: { name: "Sakshi", initial: "S" },
+    bride: { name: "Sakshi", initial: "S" },
+    groom: { name: "Vikas", initial: "V" },
   },
 
   /** The moment the countdown runs to. Sample date in January: replace it with your own. */
   weddingDateTime: "2027-02-11T00:00:00+05:30",
-  city: "Ujjain, Rajasthan",
+  city: "Ujjain, Madhya Pradesh",
 
   invitation: {
     greetingHindi: "पधारो म्हारे आँगन",
@@ -69,47 +69,47 @@ export const wedding = {
     invocation: "॥ श्री गणेशाय नमः ॥",
     message:
       "With the blessings of our families, we invite you to join us as we celebrate the beginning of a beautiful journey.",
-    brideFamily: "Mr. Aparabal",
-    groomFamily: "Mamta Singh",
+    brideFamily: "Mr. Chandresh",
+    groomFamily: "Rani Tiwari",
     familyWording: "request the pleasure of your company",
   },
 
   /** Sample functions. Dates, times and venues are examples only. Confirm each one before going live. */
   events: [
     {
-      id: "haldi", name: "Haldi", illustration: "haldi", confirmed: false,
-      start: "2027-02-09T02:30:00+05:30", end: "2027-01-14T13:00:00+05:30",
-      venue: "[Haldi venue]", address: "[Full address], Kota, Rajasthan", mapsQuery: "Kota, Rajasthan",
-      description: "Turmeric, laughter and a morning of family mischief.",
-      dressCode: "[Dress code, for example shades of yellow]",
+      id: "mehendi", name: "Mehendi", illustration: "mehendi", confirmed: true,
+      start: "2027-02-07T07:00:00+05:30", end: "2027-02-07T12:30:00+05:30",
+      venue: "Tripti Kunj", address: "Plot No.70, Street No. 13, Vivekanand Nagar, Kohka, Bhilai, Chattisgarh", mapsQuery: "Hotel Royal Blue, Kohka",
+      description: "An unhurried afternoon of henna, folk songs and sweet chai.",
+      dressCode: "Your Shade, Your Style",
     },
     {
-      id: "mehendi", name: "Mehendi", illustration: "mehendi", confirmed: false,
-      start: "2027-01-14T15:00:00+05:30", end: "2027-01-14T18:00:00+05:30",
-      venue: "[Mehendi venue]", address: "[Full address], Kota, Rajasthan", mapsQuery: "Kota, Rajasthan",
-      description: "An unhurried afternoon of henna, folk songs and sweet chai.",
-      dressCode: "[Dress code, for example shades of green]",
+      id: "haldi", name: "Haldi", illustration: "haldi", confirmed: true,
+      start: "2027-02-10T04:30:00+05:30", end: "2027-02-10T06:30:00+05:30",
+      venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
+      description: "Turmeric, laughter and a morning of family mischief.",
+      dressCode: "Pastel Dreams",
     },
     {
       id: "sangeet", name: "Sangeet", illustration: "sangeet", confirmed: false,
-      start: "2027-01-14T19:30:00+05:30", end: "2027-01-14T23:30:00+05:30",
-      venue: "[Sangeet venue]", address: "[Full address], Kota, Rajasthan", mapsQuery: "Kota, Rajasthan",
-      description: "Both families take the floor. Practise your steps.",
-      dressCode: "[Dress code, for example festive Indian]",
+      start: "2027-02-10T13:30:00+05:30", end: "2027-02-10T15:30:00+05:30",
+      venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
+      description: "My family takes the floor. Practise your steps.",
+      dressCode: "Glamour & Glitter",
     },
     {
       id: "wedding", name: "Wedding Ceremony", illustration: "wedding", confirmed: false,
-      start: "2027-01-15T19:00:00+05:30", end: "2027-01-15T23:59:00+05:30",
-      venue: "[Wedding venue]", address: "[Full address], Kota, Rajasthan", mapsQuery: "Kota, Rajasthan",
+      start: "2027-02-11T08:30:00+05:30", end: "2027-02-11T22:30:00+05:30",
+      venue: "Radhe Krishna Resort & Garden", address: "Indore-Ujjain Rd, Indore(Gothada), Madhya Pradesh", mapsQuery: "Radhe Krishna Resort & Garden, Indore",
       description: "The sacred fire, the seven steps and the promise at the heart of it all.",
-      dressCode: "[Dress code, for example traditional Indian]",
+      dressCode: "Draped in Tradition",
     },
     {
       id: "reception", name: "Reception", illustration: "reception", confirmed: false,
-      start: "2027-01-16T19:30:00+05:30", end: "2027-01-16T23:30:00+05:30",
-      venue: "[Reception venue]", address: "[Full address], Kota, Rajasthan", mapsQuery: "Kota, Rajasthan",
+      start: "2027-02-23T13:30:00+05:30", end: "2027-02-23T18:30:00+05:30",
+      venue: "Gayatri Palace", address: "Durg-Dhamdha Rd, Durg, Chattisgarh", mapsQuery: "Gayatri Palace, Durg",
       description: "Dinner, toasts and a first evening together as a married couple.",
-      dressCode: "[Dress code, for example formal]",
+      dressCode: "Glamour After Dark",
     },
   ] as WeddingEvent[],
 
@@ -120,9 +120,9 @@ export const wedding = {
   },
 
   destination: {
-    venueName: "[Main venue name]",
-    address: "[Full street address], Kota, Rajasthan [PIN]",
-    mapsQuery: "Kota, Rajasthan",
+    venueName: "Gayatri Palace",
+    address: "Durg-Dhamdha Rd, Durg, Chattisgarh",
+    mapsQuery: "Gayatri Palace, Durg",
     photo: { src: null, vignette: "courtyard", caption: "Painting: a courtyard in bougainvillea. Replace with a photograph of your venue." } as Photo,
     stays: [
       { name: "[Hotel one]", note: "[Distance from venue, and any group rate]" },
@@ -135,8 +135,8 @@ export const wedding = {
   },
 
   assistance: {
-    name: "[Contact person]",
-    phone: "+91 00000 00000",
+    name: "Mr. Chandresh Tiwari",
+    phone: "+91 94241 24496",
   },
 
   quiz: [
